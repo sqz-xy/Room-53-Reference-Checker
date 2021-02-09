@@ -44,9 +44,11 @@ namespace ReferenceChecker
 
             }
         }
-        /*
-         * Formats the string to be easier to work with and removes unwanted chars
-         */
+        /// <summary>
+        /// Formats the input string to be better to work with
+        /// </summary>
+        /// <param name="pInputString">User input</param>
+        /// <returns></returns>
         public string[] FormatString(string pInputString)
         {
             var CharsToRemove = new string[] { ",", ".", "!", "?","'"};
@@ -63,9 +65,9 @@ namespace ReferenceChecker
 
             return InputStringArray;
         }
-        /*
-         * Checks the references against the dictionary
-         */
+        /// <summary>
+        /// Checks the input string against the list of references
+        /// </summary>
         public void CheckReference()
         {
             Dictionary newDictionary = new Dictionary();
@@ -86,9 +88,12 @@ namespace ReferenceChecker
             mAnswer = getPercentage(mWordIndex, mInputStringArray.Length);
             Console.WriteLine("The Reference percentage is " + mAnswer +"%");
         }
-        /*
-         * Calculates the percentage of references ((References / Number of Words) * 100)
-         */
+        /// <summary>
+        /// Calculates the percentage of reference
+        /// </summary>
+        /// <param name="pWordIndex">Number of references</param>
+        /// <param name="pArraySize">Number of words</param>
+        /// <returns></returns>
         private double getPercentage(double pWordIndex, double pArraySize)
         {
             mPercentage = (pWordIndex / pArraySize) * 100;

@@ -32,7 +32,11 @@ namespace ReferenceChecker
             }
         }
 
-        //Menu to select output options
+        /// <summary>
+        /// Displays a menu based on a question parameter and answer parameter
+        /// </summary>
+        /// <param name="pQuestion">Question to be asked</param>
+        /// <param name="pAnswers">Responses</param>
         public void DisplayMenu(string pQuestion, string[] pAnswers)
         {
             Checker newChecker = new Checker();
@@ -73,7 +77,12 @@ namespace ReferenceChecker
             Console.ReadKey();
         }
 
-        //Gets a number in a specified range
+        /// <summary>
+        /// Gets a number within a specified range
+        /// </summary>
+        /// <param name="pMin">Minimum number</param>
+        /// <param name="pMax">Maximum number</param>
+        /// <returns></returns>
         private int GetNumberInRange(int pMin, int pMax)
         {
             try

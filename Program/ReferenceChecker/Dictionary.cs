@@ -26,13 +26,13 @@ namespace ReferenceChecker
          */
         public void initialize()
         {
-            SetDefaultReferences();
+            SetReferences();
         }
 
-        /*
-         * Reads in references from a text file and adds them to a list
-         */
-        private void SetDefaultReferences()
+       /// <summary>
+       /// Reads in references from a text file and adds them to the list
+       /// </summary>
+        private void SetReferences()
         {
             StreamReader reader = null;
             try
@@ -57,6 +57,9 @@ namespace ReferenceChecker
                 reader.Close();
             }
         }
+        /// <summary>
+        /// Adds a reference to the list, sentences are split into invidivual words
+        /// </summary>
         public void AddReferences()
         {
             Checker newChecker = new Checker();
@@ -67,9 +70,9 @@ namespace ReferenceChecker
             string[] WordArray = newChecker.FormatString(inputString);
             try
             {
+                writer = new StreamWriter("References.txt", true);
                 for (int i = 0; i < WordArray.Length; i++)
                 {
-                    writer = new StreamWriter("References.txt", true);
                     writer.WriteLine(WordArray[i]);
                 }            
             }
@@ -84,6 +87,9 @@ namespace ReferenceChecker
             }
 
         }
+        /// <summary>
+        /// Loops through the list and displays the entries
+        /// </summary>
         public void ViewReferences()
         {
             initialize();
