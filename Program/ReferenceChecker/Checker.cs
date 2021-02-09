@@ -6,9 +6,15 @@ namespace ReferenceChecker
 {
     class Checker
     {
+        //User Input
         private string mInputString;
         private string[] mInputStringArray;
-        private int mKeyIndex = 0;
+        //Indexes
+        private int mWordIndex = 0;
+        //Returns
+        private double mAnswer;
+        private double mPercentage;
+        private double mTemp;
 
         /*
          * Constructor
@@ -38,40 +44,56 @@ namespace ReferenceChecker
 
             }
         }
-        public int KeyIndex
+        /*
+         * Formats the string to be easier to work with and removes unwanted chars
+         */
+        private string[] FormatString()
         {
-            set
-            {
-                this.mKeyIndex = value;
-            }
-            get
-            {
-                if (this.mKeyIndex == -KeyIndex)
-                {
-                    throw new ArgumentNullException("Invalid Key");
-                }
-                else
-                {
-                    return this.mKeyIndex;
-                }
-            }
-        }
-
-        public string[] FormatString()
-        {
-            var CharsToRemove = new string[] { ",", ".", "!", "?", " ", "'" };
+            var CharsToRemove = new string[] { ",", ".", "!", "?","'"};
             foreach (var ch in CharsToRemove)
             {
                 mInputString = mInputString.Replace(ch, string.Empty);
             }
             mInputStringArray = mInputString.Split(' ');
+
+            for (int i = 0; i < mInputStringArray.Length; i++)
+            {
+                mInputStringArray[i] = mInputStringArray[i].ToLower();
+            }
+
             return mInputStringArray;
         }
-
-        public void CheckReference(string[] pInputStringArray)
+        /*
+         * Checks the references against the dictionary
+         */
+        public void CheckReference()
         {
             Dictionary newDictionary = new Dictionary();
-            pInputStringArray = FormatString();
+            newDictionary.initialize();
+            mInputStringArray = FormatString();
+               
+            foreach(string entry in newDictionary.GetList())
+            {
+                foreach(string word in mInputStringArray)
+                {
+                    if(entry == word)
+                    {
+                        mWordIndex++;
+                        //Console.WriteLine("Reference found");
+                    }
+                }
+            }
+            mAnswer = getPercentage(mWordIndex, mInputStringArray.Length);
+            Console.WriteLine("The Reference percentage is " + mAnswer +"%");
+        }
+        /*
+         * Calculates the percentage of references ((References / Number of Words) * 100)
+         */
+        private double getPercentage(int pWordIndex, int pArraySize)
+        {
+            mTemp = pWordIndex / pArraySize;
+            mPercentage = mTemp * 100;
+            return mPercentage;
         }
     }
 }

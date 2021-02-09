@@ -1,28 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace ReferenceChecker
 {
     class Dictionary
     {
-        private Dictionary<int, string> dReferences = new Dictionary<int, string>();
-
+        private string mLine;
+        private int mNumberOfLines = 0;
+        private List<string> lReferences = new List<string>();
         /*
-         * Getter Method for the dictionary
-         * Returns value with specified key
+         * Returns the list
          */
-        public string Get(int key)
+        public List<string> GetList()
         {
-            string result = null;
-
-            if (dReferences.ContainsKey(key))
-            {
-                result = dReferences[key];
-            }
-
-            return result;
+            return lReferences;
         }
+
         /*
          * Initializes the dictionary
          */
@@ -32,14 +27,36 @@ namespace ReferenceChecker
         }
 
         /*
-         * Sets the default references
-         * - Add functionality to set references later
-         * - Add more references later
+         * Reads in references from a text file and adds them to a list
          */
         private void SetDefaultReferences()
         {
-            dReferences.Add('0', "gunga");
-            dReferences.Add('1', "ginga");
+            StreamReader reader = null;
+            try
+            {
+                reader = new StreamReader("References.txt");
+
+                while(!reader.EndOfStream)
+                {
+                    mLine = reader.ReadLine();
+                    lReferences.Add(mLine);
+                    mNumberOfLines++;
+                }
+
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("File could not be read");
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                reader.Close();
+            }
+        }
+        private void AddReferences()
+        {
+
         }
     }
 }

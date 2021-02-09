@@ -1,0 +1,13 @@
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\bin\Debug\netcoreapp3.1\ReferenceChecker.exe
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\bin\Debug\netcoreapp3.1\ReferenceChecker.deps.json
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\bin\Debug\netcoreapp3.1\ReferenceChecker.runtimeconfig.json
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\bin\Debug\netcoreapp3.1\ReferenceChecker.runtimeconfig.dev.json
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\bin\Debug\netcoreapp3.1\ReferenceChecker.dll
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\bin\Debug\netcoreapp3.1\ReferenceChecker.pdb
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\obj\Debug\netcoreapp3.1\ReferenceChecker.csprojAssemblyReference.cache
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\obj\Debug\netcoreapp3.1\ReferenceChecker.AssemblyInfoInputs.cache
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\obj\Debug\netcoreapp3.1\ReferenceChecker.AssemblyInfo.cs
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\obj\Debug\netcoreapp3.1\ReferenceChecker.csproj.CoreCompileInputs.cache
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\obj\Debug\netcoreapp3.1\ReferenceChecker.dll
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\obj\Debug\netcoreapp3.1\ReferenceChecker.pdb
+C:\Users\proto\source\repos\Room-53-Reference-Checker\Program\ReferenceChecker\obj\Debug\netcoreapp3.1\ReferenceChecker.genruntimeconfig.cache
