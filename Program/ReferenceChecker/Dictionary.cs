@@ -100,5 +100,14 @@ namespace ReferenceChecker
                 mRefIndex++;
             }
         }
+        /// <summary>
+        /// Removes a selected reference
+        /// </summary>
+        public void RemoveReference()
+        {
+
+        }
+
+
     }
 }
