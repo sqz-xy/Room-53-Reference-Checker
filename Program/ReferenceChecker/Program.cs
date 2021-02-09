@@ -6,11 +6,11 @@ namespace ReferenceChecker
     {
         static void Main(string[] args)
         {
-            Checker newChecker = new Checker();
-            Console.WriteLine("Enter a string which you would like to check for references:");
+            string[] Options = { "Enter a sentence", "Add a reference", "View References" };
+            string Question = "Choose an option:";
 
-            newChecker.inputString = Console.ReadLine();
-            newChecker.CheckReference();
+            Menu newMenu = new Menu();
+            newMenu.DisplayMenu(Question, Options);
         }
     }
 }
