@@ -15,6 +15,7 @@ namespace ReferenceChecker
         private double mAnswer;
         private double mPercentage;
 
+
         /*
          * Constructor
          */
@@ -46,21 +47,21 @@ namespace ReferenceChecker
         /*
          * Formats the string to be easier to work with and removes unwanted chars
          */
-        private string[] FormatString()
+        public string[] FormatString(string pInputString)
         {
             var CharsToRemove = new string[] { ",", ".", "!", "?","'"};
             foreach (var ch in CharsToRemove)
             {
-                mInputString = mInputString.Replace(ch, string.Empty);
+                pInputString = pInputString.Replace(ch, string.Empty);
             }
-            mInputStringArray = mInputString.Split(' ');
+            string[] InputStringArray = pInputString.Split(' ');
 
-            for (int i = 0; i < mInputStringArray.Length; i++)
+            for (int i = 0; i < InputStringArray.Length; i++)
             {
-                mInputStringArray[i] = mInputStringArray[i].ToLower();
+                InputStringArray[i] = InputStringArray[i].ToLower();
             }
 
-            return mInputStringArray;
+            return InputStringArray;
         }
         /*
          * Checks the references against the dictionary
@@ -69,7 +70,7 @@ namespace ReferenceChecker
         {
             Dictionary newDictionary = new Dictionary();
             newDictionary.initialize();
-            mInputStringArray = FormatString();
+            mInputStringArray = FormatString(mInputString);
                
             foreach(string entry in newDictionary.GetList())
             {

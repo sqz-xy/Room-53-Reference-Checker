@@ -10,6 +10,8 @@ namespace ReferenceChecker
         private string mLine;
         private int mNumberOfLines = 0;
         private int mRefIndex = 1;
+        private string mEnteredRefs;
+        private string[] mEnteredRefsArray;
         private List<string> lReferences = new List<string>();
         /*
          * Returns the list
@@ -55,11 +57,18 @@ namespace ReferenceChecker
                 reader.Close();
             }
         }
-        private void AddReferences()
+        public void AddReferences()
         {
+            Checker newChecker = new Checker();
+            StreamWriter writer = null;
+
+            Console.WriteLine("Enter a reference: ");
+            string inputString = Console.ReadLine();
+            string[] WordArray = newChecker.FormatString(inputString);
+
+
 
         }
-
         public void ViewReferences()
         {
             initialize();

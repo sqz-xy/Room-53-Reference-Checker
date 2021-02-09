@@ -23,7 +23,7 @@ namespace ReferenceChecker
             {
                 if(this.mQuestion == "")
                 {
-                    throw new ArgumentNullException("Empty Input detrected");
+                    throw new ArgumentNullException("Empty Input detected");
                 }
                 else
                 {
@@ -59,6 +59,7 @@ namespace ReferenceChecker
                         newChecker.CheckReference();
                         break;
                     case 2:
+                        Console.Clear();
                         break;
                     case 3:
                         Console.Clear();
@@ -74,8 +75,17 @@ namespace ReferenceChecker
         //Gets a number in a specified range
         private int GetNumberInRange(int pMin, int pMax)
         {
-            Console.WriteLine("Please enter a number between " + pMin + " and " + pMax + " inclusive");
-            return int.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Please enter a number between " + pMin + " and " + pMax + " inclusive");
+                return int.Parse(Console.ReadLine());
+            }
+            catch(FormatException)
+            {
+                Console.WriteLine("That was not a valid integer");
+                return mOptions.Length;
+            }
+
         }
     }
 }
