@@ -6,7 +6,7 @@ namespace ReferenceChecker
     {
         static void Main(string[] args)
         {
-            string[] Options = { "Enter a sentence", "Add a reference", "View References" };
+            string[] Options = { "Enter a sentence", "Add a reference", "View References", "Exit" };
             string Question = "Choose an option:";
 
             Menu newMenu = new Menu();

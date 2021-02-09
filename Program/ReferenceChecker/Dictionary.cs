@@ -9,6 +9,7 @@ namespace ReferenceChecker
     {
         private string mLine;
         private int mNumberOfLines = 0;
+        private int mRefIndex = 1;
         private List<string> lReferences = new List<string>();
         /*
          * Returns the list
@@ -57,6 +58,17 @@ namespace ReferenceChecker
         private void AddReferences()
         {
 
+        }
+
+        public void ViewReferences()
+        {
+            initialize();
+            Console.WriteLine("Here are the references:");
+            foreach (string entry in lReferences)
+            {
+                Console.WriteLine(mRefIndex + ": " + entry);
+                mRefIndex++;
+            }
         }
     }
 }

@@ -35,7 +35,10 @@ namespace ReferenceChecker
         //Menu to select output options
         public void DisplayMenu(string pQuestion, string[] pAnswers)
         {
-            while (mSelection != 6)
+            Checker newChecker = new Checker();
+            Dictionary newDictionary = new Dictionary();
+
+            while (mSelection != pAnswers.Length)
             {
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\n" + pQuestion);
@@ -51,10 +54,15 @@ namespace ReferenceChecker
                 {
                     case 1:
                         Console.Clear();
-                        Checker newChecker = new Checker();
                         Console.WriteLine("Enter a string which you would like to check for references:");
                         newChecker.inputString = Console.ReadLine();
                         newChecker.CheckReference();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        Console.Clear();
+                        newDictionary.ViewReferences();
                         break;
 
                 }
