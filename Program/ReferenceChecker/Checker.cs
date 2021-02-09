@@ -11,10 +11,9 @@ namespace ReferenceChecker
         private string[] mInputStringArray;
         //Indexes
         private int mWordIndex = 0;
-        //Returns
+        //Variables for the maths
         private double mAnswer;
         private double mPercentage;
-        private double mTemp;
 
         /*
          * Constructor
@@ -89,10 +88,9 @@ namespace ReferenceChecker
         /*
          * Calculates the percentage of references ((References / Number of Words) * 100)
          */
-        private double getPercentage(int pWordIndex, int pArraySize)
+        private double getPercentage(double pWordIndex, double pArraySize)
         {
-            mTemp = pWordIndex / pArraySize;
-            mPercentage = mTemp * 100;
+            mPercentage = (pWordIndex / pArraySize) * 100;
             return mPercentage;
         }
     }
