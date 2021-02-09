@@ -7,6 +7,7 @@ namespace ReferenceChecker
     class Checker
     {
         private string mInputString;
+        private string[] mInputStringArray;
         private int mKeyIndex = 0;
 
         /*
@@ -37,7 +38,6 @@ namespace ReferenceChecker
 
             }
         }
-
         public int KeyIndex
         {
             set
@@ -57,9 +57,21 @@ namespace ReferenceChecker
             }
         }
 
-        public void CheckReference()
+        public string[] FormatString()
+        {
+            var CharsToRemove = new string[] { ",", ".", "!", "?", " ", "'" };
+            foreach (var ch in CharsToRemove)
+            {
+                mInputString = mInputString.Replace(ch, string.Empty);
+            }
+            mInputStringArray = mInputString.Split(' ');
+            return mInputStringArray;
+        }
+
+        public void CheckReference(string[] pInputStringArray)
         {
             Dictionary newDictionary = new Dictionary();
+            pInputStringArray = FormatString();
         }
     }
 }
