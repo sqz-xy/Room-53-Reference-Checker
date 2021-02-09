@@ -60,6 +60,7 @@ namespace ReferenceChecker
                         break;
                     case 2:
                         Console.Clear();
+                        newDictionary.AddReferences();
                         break;
                     case 3:
                         Console.Clear();

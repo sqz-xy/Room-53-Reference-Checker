@@ -65,8 +65,23 @@ namespace ReferenceChecker
             Console.WriteLine("Enter a reference: ");
             string inputString = Console.ReadLine();
             string[] WordArray = newChecker.FormatString(inputString);
-
-
+            try
+            {
+                for (int i = 0; i < WordArray.Length; i++)
+                {
+                    writer = new StreamWriter("References.txt", true);
+                    writer.WriteLine(WordArray[i]);
+                }            
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("File could not be read");
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                writer.Close();
+            }
 
         }
         public void ViewReferences()
